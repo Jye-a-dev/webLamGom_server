@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Danh sách Routes</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="min-h-screen bg-slate-100 flex flex-col items-center px-5 py-10 text-slate-800">
+
+<h1 class="text-3xl font-semibold text-sky-600 mb-8">
+Danh sách Route
+</h1>
+
+<table
+class="w-[90%] max-w-5xl bg-white rounded-lg shadow-md overflow-hidden"
+>
+
+<thead>
+<tr class="bg-sky-600 text-white">
+
+<th class="border border-slate-200 px-4 py-3 text-left">
+#
+</th>
+
+<th class="border border-slate-200 px-4 py-3 text-left">
+Route
+</th>
+
+</tr>
+</thead>
+
+<tbody>
+
+<% routes.forEach((route, index) => { %>
+
+<tr class="even:bg-slate-50 hover:bg-slate-100 transition">
+
+<td class="border border-slate-200 px-4 py-3">
+<%= index + 1 %>
+</td>
+
+<td class="border border-slate-200 px-4 py-3 font-mono">
+<%= route %>
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+</table>
+
+<div
+class="mt-10 flex flex-wrap justify-center gap-4 max-w-4xl bg-sky-200/60 p-6 rounded-lg"
+>
+
+<% routes.forEach(route => { %>
+
+<form action="/api/<%= route %>/html" method="get">
+
+<button
+type="submit"
+class="bg-sky-600 text-white px-6 py-3 rounded-md font-medium
+hover:bg-sky-700 hover:-translate-y-0.5
+hover:shadow-md transition-all duration-200"
+>
+
+<%= route %>
+
+</button>
+
+</form>
+
+<% }) %>
+
+</div>
+
+</body>
+</html>
