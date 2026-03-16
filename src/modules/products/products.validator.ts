@@ -14,7 +14,7 @@ export const createProductSchema = z.object({
 
 		categoryId: z.string().min(1, "categoryId is required"),
 
-		images: z.array(z.string().url()).optional(),
+		images: z.array(z.string()).optional(),
 
 		isFeatured: z.boolean().optional(),
 	}),
@@ -34,7 +34,7 @@ export const updateProductSchema = z.object({
 
 		categoryId: z.string().optional(),
 
-		images: z.array(z.string().url()).optional(),
+		images: z.array(z.string()).optional(),
 
 		isFeatured: z.boolean().optional(),
 	}),

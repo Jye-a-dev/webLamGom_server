@@ -50,6 +50,7 @@ export class ProductsController {
 				stock: p.stock,
 				category: p.categoryId?.name,
 				isFeatured: p.isFeatured,
+				images : p.images
 			}));
 
 			const columns = data.length > 0 ? Object.keys(data[0]) : [];
